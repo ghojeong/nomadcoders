@@ -1,17 +1,19 @@
 const title = document.querySelector("#title");
-const BASE_COLOR = "red";
-const OTHER_COLOR = "blue";
+const CLICKED_CLASS = "clicked";
 
-function handleMouseEnter() {
-  const titleColor =
-    title.style.color === BASE_COLOR ? OTHER_COLOR : BASE_COLOR;
-  console.log(titleColor);
-  title.style.color = titleColor;
+function handleClick() {
+  const titleClassList = title.classList;
+  console.log(titleClassList);
+  //   if (!titleClassList.contains(CLICKED_CLASS)) {
+  //     titleClassList.add(CLICKED_CLASS);
+  //   } else {
+  //     titleClassList.remove(CLICKED_CLASS);
+  //   }
+  titleClassList.toggle(CLICKED_CLASS);
 }
 
 function init() {
-  title.style.color = "BASE_COLOR";
-  title.addEventListener("mouseenter", handleMouseEnter);
+  title.addEventListener("click", handleClick);
 }
 
 init();
