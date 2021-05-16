@@ -1,3 +1,3 @@
-# momonton
+# 노마드 코더 따라하기
 
-https://nomadcoders.co/javascript-for-beginners
+[노마드 코더](https://nomadcoders.co/)의 강의 영상들을 보고 따라한 레포지토리
