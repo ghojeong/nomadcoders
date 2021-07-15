@@ -6,10 +6,10 @@ INDEED_URL = "https://www.indeed.com"
 JOB_URL = f"{INDEED_URL}/jobs?q=python&limit={LIMIT}"
 
 def get_jobs():
-    last_page = extract_pages()
+    last_page = extract_last_page()
     return extract_jobs(last_page)
 
-def extract_pages():
+def extract_last_page():
     result = requests.get(JOB_URL)
     soup = BeautifulSoup(result.text, "html.parser")
     pagination = soup.find("div", { "class": { "pagination" } })
