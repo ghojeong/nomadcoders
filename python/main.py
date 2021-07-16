@@ -7,6 +7,6 @@ from stackoverflow import get_jobs as get_so_jobs
 # print(len(indeed_jobs))
 
 so_jobs = get_so_jobs()
-# print(so_jobs)
+print(so_jobs)
 # print()
 # print(len(so_jobs))
