@@ -10,6 +10,13 @@ nextjs 는 최종 html 이 pre-rendered 되어서, css 와 js 를 추가로 다�
 
 **Hydration** 이란, 받아온 html 에 자바스크립트가 붙어서, 단순히 document 가 보여지는 상태를 넘어서 사용자와 상호작용이 가능한 상태가 된것 을 말한다.
 
+### 1.3 Routing
+
+React 혹은 NextJS 프레임워크에서 제공하는 Router 를 활용해야하는 이유
+
+전통적인 anchor 의 href 통해 페이지를 이동하면, 브라우저에서는 페이지 전체를 전부 리로드한다. <br>
+그리고 이는 매우 SPA 스럽지 않은 페이지 이동이다. 리렌더링 되지 않도록 react-router-dom 혹은 next/link 를 활용하자
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
