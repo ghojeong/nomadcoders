@@ -19,6 +19,7 @@ React 혹은 NextJS 프레임워크에서 제공하는 Router 를 활용해야�
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
 ## Getting Started
 
 First, run the development server:
