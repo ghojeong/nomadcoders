@@ -1,5 +1,15 @@
 # NextJS Introduction
 
+## 공부한 내용 정리
+
+### 1.2 Static Pre Rendering
+
+nextjs 는 최종 html 이 pre-rendered 되어서, css 와 js 를 추가로 다운받기 전까지 브라우저에서 뭔가 보인다. <br>
+일반적인 React 앱은 자바스크립트를 통해 html 을 렌더링을 해서, 관련 react 코드를 전부 받기 전까지 브라우저에 하얀 화면만 보인다. <br>
+만약 브라우저에서 자바스크립트를 disable 하면 React 앱은 자바스크립트를 활성화 해주세요 말고는 아무것도 보이지 않지만, nextjs 는 뭐라도 보인다.
+
+**Hydration** 이란, 받아온 html 에 자바스크립트가 붙어서, 단순히 document 가 보여지는 상태를 넘어서 사용자와 상호작용이 가능한 상태가 된것 을 말한다.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
