@@ -22,6 +22,12 @@ React 혹은 NextJS 프레임워크에서 제공하는 Router 를 활용해야�
 전통적인 anchor 의 href 통해 페이지를 이동하면, 브라우저에서는 페이지 전체를 전부 리로드한다. <br>
 그리고 이는 매우 SPA 스럽지 않은 페이지 이동이다. 리렌더링 되지 않도록 react-router-dom 혹은 next/link 를 활용하자
 
+### 2.2 Redirect vs Rewrite
+
+Redirect 는 특정 url 을 아예 다른 url 로 새로 고침하도록 만들고,
+
+Rewrite 는 특정 url 에 다른 url 의 결과를 보여주지만, url 을 새로 고침하지는 않는다.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ### 1.5 Styles JSX
