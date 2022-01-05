@@ -19,22 +19,14 @@ interface Movie {
   vote_count: number;
 }
 
-export default function Home() {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  useEffect(() => {
-    (async () => {
-      const { results } = await (await fetch("/api/movies")).json();
-      setMovies(results);
-    })();
-  }, []);
+export default function Home({ results: movies }: { results: Movie[] }) {
   return (
     <div className="container">
       <Seo title="Home" />
-      {!movies?.length && <h1>Loading</h1>}
       {movies?.map((movie) => (
         <div className="movie" key={movie.id}>
           <Image
-            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.poster_path}
             width="100%"
             height="100%"
@@ -65,4 +57,9 @@ export default function Home() {
       `}</style>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const props = await (await fetch("http://localhost:3000/api/movies")).json();
+  return { props };
 }
