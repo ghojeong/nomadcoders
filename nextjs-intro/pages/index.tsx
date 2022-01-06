@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Seo from "../components/Seo";
 
@@ -20,18 +21,38 @@ interface Movie {
 }
 
 export default function Home({ results: movies }: { results: Movie[] }) {
+  const router = useRouter();
+  const onClick = ({ id, title }: Movie) => {
+    router.push(
+      {
+        pathname: `/movies/${id}`,
+        query: { title },
+      },
+      `/movies/${id}`
+    );
+  };
   return (
     <div className="container">
       <Seo title="Home" />
       {movies?.map((movie) => (
-        <div className="movie" key={movie.id}>
+        <div className="movie" key={movie.id} onClick={() => onClick(movie)}>
           <Image
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.poster_path}
             width="100%"
             height="100%"
           />
-          <h4>{movie.original_title}</h4>
+          <h4>
+            <Link
+              href={{
+                pathname: `/movies/${movie.id}`,
+                query: { title: movie.title },
+              }}
+              as={`/movies/${movie.id}`}
+            >
+              <a>{movie.original_title}</a>
+            </Link>
+          </h4>
         </div>
       ))}
       <style jsx>{`
@@ -46,6 +67,7 @@ export default function Home({ results: movies }: { results: Movie[] }) {
           border-radius: 12px;
           transition: transform 0.2s ease-in-out;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          cursor: pointer;
         }
         .movie:hover {
           transform: scale(1.05) translateY(-10px);
