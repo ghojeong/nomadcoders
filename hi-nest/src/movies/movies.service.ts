@@ -16,7 +16,7 @@ export class MoviesService {
       (movie) => movie.id === +movieId,
     );
     if (!movie) {
-      throw new NotFoundException(`Movie  with ID ${movieId} not found.`);
+      throw new NotFoundException(`Movie with ID ${movieId} not found.`);
     }
     return movie;
   }
