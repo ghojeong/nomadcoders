@@ -4,3 +4,11 @@
 
 - https://nomadcoders.co/go-for-beginners/lobby
 - https://nomadcoders.co/nomadcoin
+
+
+## 환경변수 설정
+
+```sh
+echo 'export GOPATH=$HOME/Projects/personal/nomadcoders/go' >> ~/.zshrc
+echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.zshrc
+```
